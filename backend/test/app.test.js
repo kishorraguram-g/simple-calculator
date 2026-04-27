@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 test('Addition API works', async () => {
   const res = await fetch('http://localhost:3000/add', {
     method: 'POST',
