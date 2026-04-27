@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>frontend</title>
+  </head>
+  <b<!DOCTYPE html>
+<html>
+<body>
+  <h2>Calculator</h2>
+
+  <input id="a" type="number" placeholder="A">
+  <input id="b" type="number" placeholder="B">
+
+  <button onclick="add()">Add</button>
+
+  <h3 id="result"></h3>
+
+  <script>
+    async function add() {
+      const a = document.getElementById('a').value;
+      const b = document.getElementById('b').value;
+
+      const res = await fetch('http://localhost:3000/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ a: Number(a), b: Number(b) })
+      });
+
+      const data = await res.json();
+      document.getElementById('result').innerText = data.result;
+    }
+  </script>
+</body>
+</html>ody>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
